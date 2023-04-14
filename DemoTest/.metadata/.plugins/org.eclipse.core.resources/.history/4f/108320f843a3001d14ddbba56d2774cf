@@ -1,0 +1,12 @@
+package com.demonew;
+
+public class AnimalTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Animal animal = new Animal();
+		animal.eat();
+		
+		System.out.println("hello");
+	}
+
+}

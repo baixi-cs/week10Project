@@ -1,0 +1,25 @@
+package com.demonew;
+
+public class AnimalTest {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Animal animal = new Animal();
+		animal.eat();
+		
+//		Dog d = new Dog();
+//		d.setAge(4);
+//		d.setName("huahua");
+//		d.setTail("yaoyao");
+//		d.setSpecies("dog");
+		
+//		d.eat();
+//		d.printInfo();
+//		
+//		Penguin p = new Penguin("bbb", 5);
+//		p.eat();
+//		
+		
+		System.out.println("hello");
+	}
+
+}

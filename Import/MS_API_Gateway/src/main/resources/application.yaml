@@ -1,0 +1,23 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: Performance-service
+          uri: 'http://localhost:9003'
+          predicates:
+            - Path=/**
+        - id: Employee-service
+          uri: 'http://localhost:9002'
+          predicates:
+            - Path=/api/**
+
+  application:
+    name: Gateway_API_Service
+
+server:
+  port: 8080
+  
+
+eureka:
+  instance:
+    hostname: localhost

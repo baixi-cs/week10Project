@@ -1,0 +1,55 @@
+package com.demonew;
+
+public class Animal {
+	private String name;
+	private int age;
+	
+	
+
+//	public Animal () {
+//		this.setName(name);
+//		this.setAge(age);
+//		this.setSpecies(species);
+//	}
+	public Animal() {
+		// TODO Auto-generated constructor stub
+	}
+	public Animal(String name, int age) { 
+        this.name = name; 
+        this.age = age;
+    } 
+	
+
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+	
+	public void printInfo() {
+		System.out.println("nm="+name+"age="+age+"sp="+species);
+	}
+	
+	 public void eat(){ 
+		 System.out.println(name+"正在吃"); 
+	 }
+	 public void sleep(){
+	      System.out.println(name+"正在睡");
+	 }
+	 public void introduction() { 
+	     System.out.println("大家好！我是" + age + "号" + name + "."); 
+	 } 
+
+}

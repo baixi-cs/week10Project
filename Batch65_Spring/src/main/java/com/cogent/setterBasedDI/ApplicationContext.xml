@@ -1,0 +1,25 @@
+ 
+<beans  
+    xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+               
+<!--  Bean definitions can have zero or more properties. Property elements correspond to 
+ JavaBean setter methods exposed by the bean classes.
+ 
+  Spring supports primitives, references to other beans in the same 
+  or related factories, lists, maps 
+ and properties  -->
+ <!--  //by default scope for bean is singleton. -->
+  
+<bean id="studentbean" class="com.cogent.setterBasedDI.Student" scope="prototype">  
+<property name="name" value="Amit Yadav"></property>  
+</bean>  
+
+<bean id="studentbean2" class="com.cogent.setterBasedDI.Student" scope="singleton">  
+<property name="name" value="Abhi"></property>  
+</bean>
+  
+</beans>  
