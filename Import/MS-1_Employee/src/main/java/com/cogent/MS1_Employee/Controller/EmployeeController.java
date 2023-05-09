@@ -6,14 +6,17 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cogent.MS1_Employee.Repo.EmployeeRepository;
@@ -21,8 +24,9 @@ import com.cogent.MS1_Employee.Entity.Employee;
 import com.cogent.MS1_Employee.Exceptions.ResourceNotFoundException;
 
 import javax.validation.Valid;
-
+@CrossOrigin
 @RestController
+@RequestMapping("/employee-api")
 public class EmployeeController {
 
 	// HTTP Methods
@@ -84,5 +88,20 @@ public class EmployeeController {
 		}
 
 	}
-
+//	@FeignClient(name="Performer-Service")
+//	public interface PerformerRestController{
+//		
+//	}
+	
+	@Autowired
+	PerformerRestController performerRestController;
+	
+	@GetMapping("helloemployee")
+	public String helloemp() {
+		
+		//Here we need to invoke the things from other microservice
+		System.out.println(performerRestController.getClass().getName());
+		return performerRestController.Hello();
+		
+	}
 }

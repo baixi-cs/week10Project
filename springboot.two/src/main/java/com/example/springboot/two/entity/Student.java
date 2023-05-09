@@ -8,7 +8,7 @@ import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@Table
+@Table (name = "Student")
 public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

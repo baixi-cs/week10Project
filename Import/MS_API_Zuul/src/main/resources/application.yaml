@@ -1,0 +1,19 @@
+server:
+  port: 8888
+spring:
+  application:
+    name: zuul-proxy
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+  instance:
+    preferIpAddress: true
+zuul:
+  routes:
+    Employee-service:
+      serviceId: Employee-service
+    Performance-service:
+      serviceId: Performance-service
+  host:
+    socket-timeout-millis: 30000
